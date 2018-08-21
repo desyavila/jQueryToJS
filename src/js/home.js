@@ -43,6 +43,7 @@ Promise.race([
 })
 
 
+// ******************* CONECTANDO A LA API **************** //
 
 // LLAMANDO LA API CON JQUERY
 /*
@@ -74,7 +75,7 @@ $.ajax('https://randomuser.me/api/dasasdde3', {
 */
 
 
-// VANILLA JS
+// LLAMANO LA API VANILLA JS
 
 fetch('https://randomuser.me/api/')
 	.then(function(response){
