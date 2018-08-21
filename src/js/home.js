@@ -75,7 +75,7 @@ $.ajax('https://randomuser.me/api/dasasdde3', {
 */
 
 
-// LLAMANO LA API VANILLA JS
+// LLAMANDO LA API VANILLA JS
 
 fetch('https://randomuser.me/api/')
 	.then(function(response){
@@ -87,10 +87,19 @@ fetch('https://randomuser.me/api/')
 	})
 	.catch(function(){
 		console.log('algo fallo')
-	})
+	});
 
 
 
+// OBTENIENDO DATA DE UNA API CON ASYNC/AWAIT
+
+(async function load(){
+                                
+  const response = await fetch('https://yts.am/api/v2/list_movies.json?genre=action');
+  const data = await response.json()
+  console.log(data);
+  
+})()
 
 
 
