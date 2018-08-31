@@ -152,6 +152,12 @@ fetch('https://randomuser.me/api/')
            )
        }
 
+       function createTemplate(HTMLString) {
+            const html = document.implementation.createHTMLDocument();
+            html.body.innerHTML = HTMLString;
+            return html.body.children[0];
+        }
+
        function clickMovie(movieItem){
            console.log('movieItem', movieItem);
            movieItem.addEventListener('click', function() {
@@ -167,9 +173,11 @@ fetch('https://randomuser.me/api/')
            $container.children[0].remove()
            movieList.forEach((movie) => {
                const HTMLString = movieItemTemplate(movie)
-               $container.innerHTML += HTMLString;
 
-               clickMovie(HTMLString);
+               //$container.innerHTML += HTMLString;
+               const movieElement = createTemplate(HTMLString);
+               $container.append(movieElement);
+               clickMovie(movieElement);
                //console.log(HTMLString);
            })
        }
